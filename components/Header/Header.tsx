@@ -1,15 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import { GreeneryHeader } from "./Header.style";
 
 function Header() {
   return (
-    <header>
+    <GreeneryHeader>
       <h1>
-        <Link href="/">
+        <Link href="/" passHref>
           <Image src="" alt="" />
         </Link>
       </h1>
-    </header>
+    </GreeneryHeader>
   );
 }
 
