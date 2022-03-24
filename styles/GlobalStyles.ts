@@ -1,8 +1,9 @@
 import { css } from "@emotion/react";
 
 const reset = css`
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+  /* 여백 초기화 */
   html,
   body,
   h1,
@@ -51,6 +52,8 @@ const reset = css`
     margin: 0;
     padding: 0;
   }
+
+  /* 기본 border 제거 */
   body,
   input,
   select,
@@ -60,16 +63,22 @@ const reset = css`
   fieldset {
     border: none;
   }
+
+  /* 리스트 제거 */
   ul,
   ol,
   li {
     list-style: none;
   }
+
+  /* 표 간격 초기화 */
   table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
   }
+
+  /* 이텔릭 제거 */
   address,
   cite,
   code,
@@ -78,6 +87,8 @@ const reset = css`
     font-style: normal;
     font-weight: normal;
   }
+
+  /* 세로 정렬 초기화 */
   label,
   img,
   input,
@@ -87,24 +98,38 @@ const reset = css`
   a {
     vertical-align: middle;
   }
+
   u,
   ins,
   a {
     text-decoration: none;
+    color: #000;
   }
+
   button {
     cursor: pointer;
   }
 
-  body {
-    font-family: "Noto Sans KR", sans-serif;
+  /* 폰트 */
+  html {
+    font-size: 20px;
   }
+
+  body {
+    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+  }
+
+  /* 셀렉트 화살 제거 */
   select {
     appearance: none;
   }
+  /* IE edge */
   select::-ms-expand {
     display: none;
   }
+
+  /* input 태그 기본 버튼 제거 */
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-results-button,
@@ -113,9 +138,11 @@ const reset = css`
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
+
   input[type="number"] {
     -moz-appearance: textfield;
   }
+
   input[type="number"],
   input[type="text"],
   input[type="password"],
@@ -130,6 +157,8 @@ const reset = css`
     -webkit-border-radius: 0;
     outline: 0;
   }
+
+  /* 크기 조절 제거 */
   textarea {
     resize: none;
   }
