@@ -11,7 +11,6 @@ export function Landing({ article }: any) {
         <TodayArticleSection>
           <ReactMarkdown>{article.content}</ReactMarkdown>
         </TodayArticleSection>
-        <Link href="/hello">hi</Link>
       </MainContainer>
     </>
   );
