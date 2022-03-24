@@ -1,8 +1,8 @@
-import type { NextPage, GetServerSideProps } from "next";
-import Landing from "container/Landing/Landing";
+import type { GetServerSideProps } from "next";
 import axios from "axios";
+import { Landing } from "containers/Landing";
 
-interface todaysArticle {
+interface landingData {
   data: {
     isOk: boolean;
     imgUrl: string;
@@ -10,14 +10,12 @@ interface todaysArticle {
   };
 }
 
-const Home: NextPage<todaysArticle> = ({ data }) => {
-  console.log(data);
-  return <Landing />;
-};
+function Home({ data }: landingData) {
+  return <Landing article={data} />;
+}
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await axios.get("http://localhost:8080/api/todays/article");
-  console.log(res.data);
   return { props: { data: res.data } };
 };
 
