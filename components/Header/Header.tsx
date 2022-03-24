@@ -1,17 +1,30 @@
 import Link from "next/link";
-import Image from "next/image";
-import { GreeneryHeader } from "./Header.style";
+import { GreeneryHeader, PassLink, HeaderNav } from "./Header.style";
+import MainLogo from "public/assets/logo/mainLogo.svg";
 
-function Header() {
+export function Header() {
   return (
     <GreeneryHeader>
       <h1>
         <Link href="/" passHref>
-          <Image src="" alt="" />
+          <PassLink>
+            <MainLogo className="mainLogo" />
+          </PassLink>
         </Link>
       </h1>
+      <HeaderNav>
+        <ul>
+          <li>
+            <Link href="#">커뮤니티</Link>
+          </li>
+          <li>
+            <Link href="#">식물추천</Link>
+          </li>
+          <li>
+            <Link href="#">초록위키</Link>
+          </li>
+        </ul>
+      </HeaderNav>
     </GreeneryHeader>
   );
 }
-
-export default Header;
