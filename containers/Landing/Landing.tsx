@@ -1,12 +1,13 @@
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import { MainContainer } from "components/MainContainer";
+import { Header } from "components/Header";
 import { TodayArticleSection } from "./Landing.style";
 
 export function Landing({ article }: any) {
   return (
     <>
-      <header></header>
+      <Header />
       <MainContainer>
         <TodayArticleSection>
           <ReactMarkdown>{article.content}</ReactMarkdown>
