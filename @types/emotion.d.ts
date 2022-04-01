@@ -5,5 +5,9 @@ declare module "@emotion/react" {
     containerSize: {
       [key: string]: string;
     };
+    deviceType: {
+      tablet: string;
+      phone: string;
+    };
   }
 }
