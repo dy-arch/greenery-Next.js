@@ -6,6 +6,7 @@ declare module "@emotion/react" {
       [key: string]: string;
     };
     deviceType: {
+      desktop: string;
       tablet: string;
       phone: string;
     };

@@ -5,4 +5,9 @@ export const theme: Theme = {
     large: "1200px",
     small: "720px",
   },
+  deviceType: {
+    desktop: "1200px",
+    tablet: "767px",
+    phone: "320px",
+  },
 };
