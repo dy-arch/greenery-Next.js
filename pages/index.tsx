@@ -1,8 +1,8 @@
-import type { GetServerSideProps } from "next";
+import type { GetStaticProps } from "next";
 import axios from "axios";
 import { Landing } from "containers/Landing";
 
-interface landingData {
+interface staticProps {
   data: {
     isOk: boolean;
     imgUrl: string;
@@ -10,13 +10,16 @@ interface landingData {
   };
 }
 
-function Home({ data }: landingData) {
+function Home({ data }: staticProps) {
   return <Landing article={data} />;
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const res = await axios.get("http://localhost:8080/api/todays/article");
-  return { props: { data: res.data } };
+  return {
+    props: { data: res.data },
+    revalidate: 60,
+  };
 };
 
 export default Home;

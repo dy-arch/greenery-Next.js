@@ -7,12 +7,12 @@ import { theme } from "styles/theme";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Global styles={reset} />
       <Head>
         <title>초록친구</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <ThemeProvider theme={theme}>
+        <Global styles={reset} />
         <Component {...pageProps} />
       </ThemeProvider>
     </>

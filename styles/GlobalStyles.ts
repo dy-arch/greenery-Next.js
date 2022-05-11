@@ -1,6 +1,6 @@
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 
-const reset = css`
+const reset = (theme: Theme) => css`
   @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
   /* 여백 초기화 */
@@ -89,7 +89,7 @@ const reset = css`
   }
 
   /* 세로 정렬 초기화 */
-  label,
+  /* label,
   img,
   input,
   select,
@@ -97,7 +97,7 @@ const reset = css`
   button,
   a {
     vertical-align: middle;
-  }
+  } */
 
   u,
   ins,
@@ -115,7 +115,8 @@ const reset = css`
     font-size: 20px;
   }
 
-  body {
+  body,
+  a {
     font-size: 0.8rem;
     font-family: "Roboto", sans-serif;
   }
@@ -161,6 +162,12 @@ const reset = css`
   /* 크기 조절 제거 */
   textarea {
     resize: none;
+  }
+
+  @media (max-width: ${theme.deviceType.desktop}) {
+    html {
+      font-size: 17px;
+    }
   }
 `;
 
